@@ -16,6 +16,8 @@
 
             <div class  = "navbar-menu">
                 <div class = "navbar-end">
+                    <a href ="{% url 'submit' %}" class = "navbar-item">Submit</a>
+
                     <div class="navbar-item">
                         <div class="buttons">
                             {%if user.is_authenticated %}

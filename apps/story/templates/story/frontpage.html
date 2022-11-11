@@ -10,7 +10,18 @@
 
     <div class ="columns">
         <div clas = "column is-12">
-            List of submissions goes here!
+            <table class = "table is-striped is-fullwidth">
+                <tbody>
+                    {% for story in stories %}
+                    <tr> 
+                        <td> {{forloop.counter}}.</td>
+                        <td>
+                            <a href ="{{story.url }}" tagret ="_blank"> {{story.title}}</a>
+                            <p>{{story.number_of_votes}} votes by {{story.created_by.username}} {{story.created_at |timesince}} ago</p>
+                        </td>   
+                    </tr>
+                {%endfor%} 
+                </tbody>
         </div>
     </div>
 </div>
