@@ -103,12 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.db',
-        'TIMEOUT': None,
-    }
-}
+
 
 
 # Internationalization
