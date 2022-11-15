@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import django_heroku
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +26,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ho-z&cvp37n^)t9s_%^uke9rl#$a=()iurj16q380#olob@$e1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['clear-news.azurewebsites.net/']
+ALLOWED_HOSTS = ['*',]
+
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL ='frontpage'
 LOGOUT_REDIRECT_URL = 'frontpage'
@@ -77,10 +81,23 @@ WSGI_APPLICATION = 'clearNews.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dag37sb9tkeppi',
+        'USER': 'crjdxqloffhmlq',
+        'PASSWORD': 'f43616be9bd676b3d155ecd14940f8a7f68edfd0380bed364eb70f2e33471848',
+        'HOST': 'ec2-34-200-205-45.compute-1.amazonaws.com',
+        'PORT': '5432',
+        
     }
 }
 
@@ -121,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -129,11 +146,5 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-STATIC_ROOT = BASE_DIR / "staticfiles"
-
-CSRF_TRUSTED_ORIGINS = ['https://clear-news.azurewebsites.net/','https://*.127.0.0.1']
-
-
-import django_on_heroku
-
-django_on_heroku.settings(locals())
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+django_heroku.settings(locals())
