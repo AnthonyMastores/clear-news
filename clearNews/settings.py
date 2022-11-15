@@ -146,5 +146,5 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-CSRF_TRUSTED_ORIGINS = ['https://clearnews.azurewebsites.net/','https://*.127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://clearnews.azurewebsites.net','https://*.127.0.0.1']
 
