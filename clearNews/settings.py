@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -78,7 +79,7 @@ WSGI_APPLICATION = 'clearNews.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -86,19 +87,20 @@ DATABASES = {
     }
 }
 '''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dag37sb9tkeppi',
-        'USER': 'crjdxqloffhmlq',
-        'PASSWORD': 'f43616be9bd676b3d155ecd14940f8a7f68edfd0380bed364eb70f2e33471848',
-        'HOST': 'ec2-34-200-205-45.compute-1.amazonaws.com',
+        'NAME': 'clear-news-db',
+        'USER': 'AnthonyJM@clear-news-db',
+        'PASSWORD': 'Anthony27',
+        'HOST': 'clear-news-db.postgres.database.azure.com',
         'PORT': '5432',
-        
+        "OPTIONS": {"sslmode": "require"},
     }
 }
 
-'''
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
