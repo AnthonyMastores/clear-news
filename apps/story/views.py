@@ -20,6 +20,7 @@ def submit(request):
             story = form.save(commit=False)
             story.created_by = request.user
             story.save()
+            
             return redirect('frontpage')
     form = StoryForm()
     
