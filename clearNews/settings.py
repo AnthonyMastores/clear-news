@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ho-z&cvp37n^)t9s_%^uke9rl#$a=()iurj16q380#olob@$e1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['clear-news.azurewebsites.net/']
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL ='frontpage'
 LOGOUT_REDIRECT_URL = 'frontpage'
@@ -130,6 +130,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+CSRF_TRUSTED_ORIGINS = ['https://clear-news.azurewebsites.net/','https://*.127.0.0.1']
+
 
 import django_on_heroku
 
