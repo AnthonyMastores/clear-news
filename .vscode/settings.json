@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/f283a877-c715-4d19-8992-c635c72506f8/AppServices/subscriptions/f283a877-c715-4d19-8992-c635c72506f8/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/clearNews",
+    "appService.deploySubpath": "."
+}
