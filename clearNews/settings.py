@@ -90,12 +90,12 @@ DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'clear-news-db',
-        'USER': 'AnthonyJM@clear-news-db',
-        'PASSWORD': 'Anthony27',
-        'HOST': 'clear-news-db.postgres.database.azure.com',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'FdvUBZ7L043ZFLxThuKZ',
+        'HOST': 'containers-us-west-128.railway.app',
+        'PORT': '7142',
         "OPTIONS": {"sslmode": "require"},
     }
 }
