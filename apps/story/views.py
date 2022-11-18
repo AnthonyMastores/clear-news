@@ -6,8 +6,8 @@ from .models import Story
 # Create your views here.
 def frontpage(request):
     date_from = datetime.datetime.now() - datetime.timedelta(days =1)
-    stories = Story.objects.filter(created_at__gte=date_from).order_by('-number_of_votes')[0:30]
-    ## stories = Story.objects.all().order_by('-number_of_votes')[0:30]
+    ##stories = Story.objects.filter(created_at__gte=date_from).order_by('-number_of_votes')[0:30]
+    stories = Story.objects.all().order_by('-number_of_votes')[0:30]
 
 
     return render(request, 'story/frontpage.html',{'stories':stories})
