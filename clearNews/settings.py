@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ho-z&cvp37n^)t9s_%^uke9rl#$a=()iurj16q380#olob@$e1'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['clear-news.azurewebsites.net','127.0.0.1',]
 LOGIN_URL = 'login'
@@ -90,17 +90,15 @@ DATABASES = {
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'clear-news-db',
-        'USER': 'AnthonyJM@clear-news-db',
-        'PASSWORD': 'Anthony27',
-        'HOST': 'clear-news-db.postgres.database.azure.com',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'clear-news-db-ct',
+        'USER': 'Anthony@clear-news-db-cst',
+        'PASSWORD': 'Mastores27',
+        'HOST': 'clear-news-db-cst.postgres.database.azure.com',
         'PORT': '5432',
         "OPTIONS": {"sslmode": "require"},
     }
 }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
