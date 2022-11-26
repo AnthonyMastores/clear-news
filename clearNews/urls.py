@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.core.views import signup
-from apps.story.views import frontpage, submit
+from apps.story.views import frontpage, submit, newest
 from django.contrib.auth import views
 
 urlpatterns = [
     path('',frontpage, name='frontpage'),
+    path('newest/', newest, name = 'newest'),
     path('submit/', submit, name = 'submit'),
     path('signup/', signup, name='signup'),
     path('login/', views.LoginView.as_view(template_name='core/login.html'), name='login'),

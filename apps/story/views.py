@@ -12,6 +12,10 @@ def frontpage(request):
 
     return render(request, 'story/frontpage.html',{'stories':stories})
 
+def newest(request):
+    stories = Story.objects.all()[0:200]
+    return render(request, 'story/newest.html', {'stories':stories})
+
 @login_required
 def submit(request):
     if request.method == 'POST':
