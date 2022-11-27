@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class StoryConfig(AppConfig):
+class SubmissionConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'apps.story'
+    name = 'apps.submission'

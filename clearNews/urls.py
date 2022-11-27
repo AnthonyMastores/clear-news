@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.core.views import signup
-from apps.story.views import frontpage, submit, newest
+from apps.submission.views import frontpage, submit, newest
 from django.contrib.auth import views
 
 urlpatterns = [

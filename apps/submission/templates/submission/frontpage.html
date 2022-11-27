@@ -12,12 +12,12 @@
         <div clas = "col-sm">
             <table class = "table">
                 <tbody>
-                    {% for story in stories %}
+                    {% for submission in submissions %}
                     <tr> 
                         <td> {{forloop.counter}}.</td>
                         <td>
-                            <a href ="{{story.url }}" tagret ="_blank"> {{story.title}}</a>
-                            <p>{{story.number_of_votes}} votes by {{story.created_by.username}} {{story.created_at |timesince}} ago</p>
+                            <a href ="{{submission.url }}" tagret ="_blank"> {{submission.title}}</a>
+                            <p>{{submission.number_of_votes}} votes by {{submission.created_by.username}} {{submission.created_at |timesince}} ago</p>
                         </td>   
                     </tr>
                 {%endfor%} 
