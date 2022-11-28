@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm">
-                <h1 class="title">Newest</h1>
+                <h1 class="title">Most Recent</h1>
             </div>
         </div>
 
@@ -16,7 +16,7 @@
                     <tr> 
                         <td> {{forloop.counter}}.</td>
                         <td>
-                            <a href ="{{submission.url }}" tagret ="_blank"> {{submission.title}}</a>
+                            <a href ="#" onclick= 'window.open("{{submission.url }}");return false;'> {{submission.title}}</a>
                             <p>{{submission.number_of_votes}} votes by {{submission.created_by.username}} {{submission.created_at |timesince}} ago</p>
                         </td>   
                     </tr>
