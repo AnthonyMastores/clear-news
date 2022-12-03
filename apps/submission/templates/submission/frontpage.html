@@ -16,7 +16,7 @@
                     <tr> 
                         <td> {{forloop.counter}}.</td>
                         <td>
-                            <a href ="#" onclick= 'window.open("{{submission.url }}");return false;'> {{submission.title}}</a>
+                            <a href ="{{submission.url }}" onclick= 'window.open("{{submission.url }}");return false;'> {{submission.title}}</a>
                             <p>{{submission.number_of_votes}} votes by {{submission.created_by.username}} {{submission.created_at |timesince}} ago</p>
                         </td>   
                     </tr>
