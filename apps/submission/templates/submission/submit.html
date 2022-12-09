@@ -2,22 +2,22 @@
 
 {% block content %}
     <div class="container">
-        <div class="columns">
-            <div class="column is-12">
-                <h1 class="title">New Story</h1>
+        <div class="col-sm">
+            <div class="col-sm">
+                <h1>New Story</h1>
             </div>
         </div>
 
-        <div class ="columns">
-            <div class = "column is-12">
+        <div class ="col-sm">
+            <div class = "col-sm">
                 <form method="post" action=".">
                     {% csrf_token %}
 
                     {{ form.as_p }}
 
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is-success">Submit</button>
+                    <div>
+                        <div>
+                            <button>Submit</button>
                         </div>
                     </div>
                 </form>

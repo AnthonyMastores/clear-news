@@ -16,11 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.core.views import signup
-from apps.submission.views import frontpage, submit, newest
+from apps.submission.views import frontpage, submit, newest, vote,comment
 from django.contrib.auth import views
 
 urlpatterns = [
     path('',frontpage, name='frontpage'),
+    ## path('vote/<int:submission_id/>', vote, name = 'vote'),
+    path('s/<int:submission_id>/vote', vote, name='vote'),
+    path('s/<int:submission_id>/', comment, name='comment'),
     path('newest/', newest, name = 'newest'),
     path('submit/', submit, name = 'submit'),
     path('signup/', signup, name='signup'),

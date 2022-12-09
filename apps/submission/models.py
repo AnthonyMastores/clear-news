@@ -14,3 +14,25 @@ class Submission(models.Model):
         
     def __str__(self):
         return '%s' % self.title
+    
+class Vote(models.Model):
+    submission = models.ForeignKey(Submission, related_name='votes', on_delete=models.CASCADE)
+
+    created_by = models.ForeignKey(User, related_name='votes', on_delete=models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        self.submission.number_of_votes = self.submission.number_of_votes + 1
+        self.submission.save()
+
+        super(Vote, self).save(*args, **kwargs)
+        
+class Comment(models.Model):
+    submission = models.ForeignKey(Submission, related_name='comments', on_delete=models.CASCADE)
+    body = models.TextField()
+    
+    created_by = models.ForeignKey(User, related_name='comments',on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        ordering = ['-created_at']
+    

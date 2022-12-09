@@ -1,0 +1,58 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h1 >Title: {{ submission.title }}</h1>
+                <h2> {{ submission.number_of_votes}} votes </h2>
+                    <h2> <strong>Submitted By: </strong> {{submission.created_by.username}}</h2> 
+                    <hr>
+                    <h2><strong> Visit: </strong><a href = "{{ submission.url }}" target = "_blank"> {{submission.url}}</a> </h2>
+                
+                    </div>
+        </div>
+
+    <div class ="row">
+        <div clas = "col-sm">
+            <hr>
+            <h2 Comments </h2>
+                <h2 class="subtitle">Add comment</h2>
+
+            {% if request.user.is_authenticated %}
+                <form method="post" action=".">
+                    {% csrf_token %}
+
+                    {{ form.as_p }}
+
+                    <div >
+                        <div >
+                            <button >Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <hr>
+            {% else %}
+                <p>Please log in to comment!</p>
+            {% endif %}
+            
+                {% for comment in submission.comments.all %}
+                <article>
+                    <div class>
+                        <div>
+                            <p>
+                                <strong>{{ comment.created_by.username }}</strong> <small>{{ comment.created_at|timesince }} ago</small><br>
+                                {{ comment.body }}
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            {% empty %}
+                <p>No comments yet!</p>
+            {% endfor %}
+            <hr>
+
+    </div>
+</div>
+{% endblock %}
+
