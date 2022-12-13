@@ -19,8 +19,8 @@
                             <a href ="{{submission.url }}" onclick= 'window.open("{{submission.url }}");return false;'> {{submission.title}}</a>
                             <p>
                                 {{submission.number_of_votes}} votes by {{submission.created_by.username}} {{submission.created_at |timesince}} ago |
-                               <a href="{% url 'vote' submission.id %}">Vote</a>     
-                               <a href="{% url 'comment' submission.id %}">Comment</a>     
+                                {% if not submission.created_by == request.user %} <a href="{% url 'vote' submission.id %}">Vote</a>  {% endif %}
+                                <a href="{% url 'comment' submission.id %}">Comment</a>     
                             </p>
                         </td>   
                     </tr>

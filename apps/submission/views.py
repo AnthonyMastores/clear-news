@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import SubmissionForm, CommentForm
 from .models import Submission, Vote, Comment
 # Create your views here.
+
 def frontpage(request):
     date_from = datetime.datetime.now() - datetime.timedelta(days =1)
     submissions = Submission.objects.all().order_by('-number_of_votes')[0:30]
